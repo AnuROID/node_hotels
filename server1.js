@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express();
 const db=require('./db');
+require('dotenv').config();
 
 const bodyParser=require('body-parser');
 app.use(bodyParser.json());
@@ -40,6 +41,8 @@ app.get('/menuitem',async(req,res)=>{
 })
 const personroutes=require("C:/anuragsharma/backcodetutorial/routes/personroutes.js");
 app.use('/person',personroutes);
+
+const PORT=process.env.PORT||3000;
 
 // comment added for testin purose
 app.listen(3000,()=>{
